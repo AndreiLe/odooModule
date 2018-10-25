@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+    <!-- custom css -->
+    <template id="mystyle" name="My style" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link href="/hello/static/less/style.less" rel="stylesheet" type="text/less"/>
+        </xpath>
+    </template>
+    <!-- Main menu -->
+    <template id="hello_menu" customize_show="True" inherit_id="website.layout" name="Hello Top Menu">
+      <xpath expr="//ul[@id='top_menu']" position="replace">
+        <ul class="nav navbar-nav navbar-right" id="top_menu">
+          <li><a href="/">Hello</a></li>
+          <li><a href="javascript: window.history.back()">Back</a></li>
+        </ul>
+      </xpath>
+    </template>
+    <!-- Footer menu  -->
+    <template id="hello_footer" inherit_id="website.layout" name="Hello Footer">
+      <xpath expr="//div[@id='footer']" position="replace">
+        <div id="footer" class="container hidden-print">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <ul class="list-unstyled" id="products">
+                <li><a href="/">World</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4  col-lg-3" id="info">
+            </div>
+            <div class="col-md-4 col-lg-5 col-lg-offset-1">
+            </div>
+          </div>
+        </div>
+      </xpath>
+    </template>
+    <!-- Main content  -->
+    <template id="hello_page" inherit_id="website.layout">
+      <xpath expr="//main" position="replace">
+        <main class="main_hello">
+          <div id="wrap">
+            <div class="container text-center o_homepage_editor_welcome_message" style="min-height: 475px;">
+              <h2 class="mt0">Hello <b>World</b>!</h2>
+            </div>
+          </div>
+        </main>
+      </xpath>
+    </template>
+  </data>
+</odoo>
